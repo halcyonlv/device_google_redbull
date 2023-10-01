@@ -1,11 +1,14 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2023 The Halcyon Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit some common Halcyon stuff.
+$(call inherit-product, vendor/halcyon/config/common.mk)
+
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-halcyon
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -24,10 +27,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # EUICC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
 
 # RCS
 PRODUCT_PACKAGES += \
